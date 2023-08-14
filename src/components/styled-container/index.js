@@ -23,4 +23,8 @@ export const FormContainer = styled.div`
   input, p {
   margin-bottom: 10px;
   }
+
+  @media screen and (max-width: 550px){
+    width: 400px;
+  }
 `

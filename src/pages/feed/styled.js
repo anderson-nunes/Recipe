@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 export const FeedContainerStyled = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   width: 100vw;
-  justify-items: center;
-  grid-gap: 10px 0;
-  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2rem;
+  gap: 3rem;
+  /* display: ${props => (props.isVisible ? "block" : "none")}; */
 `
 
 export const RecipeCardStyled = styled.div`

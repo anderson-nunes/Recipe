@@ -2,10 +2,10 @@ import axios from 'axios'
 
 export const BASE_URL = "https://api-cookenu.onrender.com"
 
-
 export const Login = async (body) => {
   const { data } = await axios.post(`${BASE_URL}/user/login`, body)
   return data
+
 }
 
 export const Signup = async (body) => {
@@ -14,7 +14,30 @@ export const Signup = async (body) => {
 }
 
 export const ListRecipes = async () => {
-  const { data } = await axios.get(`${BASE_URL}/recipe/feed`,
+  const { data } = await axios.get(`${BASE_URL}/recipe/all`,
+
+    {
+      headers: {
+        Authorization: localStorage.getItem('cookenu.token')
+      }
+    }
+  )
+  return data
+}
+
+export const AddRecipe = async (body) => {
+  const { data } = await axios.post(`${BASE_URL}/recipe`, body,
+    {
+      headers: {
+        Authorization: localStorage.getItem('cookenu.token')
+      }
+    }
+  )
+  return data
+}
+
+export const GetRecipe = async (id) => {
+  const { data } = await axios.get(`${BASE_URL}/recipe/${id}`,
 
     {
       headers: {

@@ -12,6 +12,8 @@ import { useNavigate } from 'react-router-dom'
 import { Signup } from '../../constants'
 import { Button } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 export const SignupPage = () => {
 
@@ -26,6 +28,29 @@ export const SignupPage = () => {
   const [isEmailValid, setIsEmailValid] = useState(true)
   const [isPasswordValid, setIsPasswordValid] = useState(true)
   const [isNameValid, setIsNameValid] = useState(true)
+
+  const notify = () => toast.success('Sucesso!!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    top: '1rem'
+  })
+
+  const notifyError = () => toast.error('Erro no cadastrado!!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  })
 
 
   const onSubmit = async (e) => {
@@ -42,9 +67,11 @@ export const SignupPage = () => {
       })
       localStorage.setItem('cookenu.token', token)
       goToFeedPage(navigate)
+      notify()
 
     } catch (err) {
       console.log(err)
+      notifyError()
     }
   }
 

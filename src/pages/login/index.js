@@ -10,11 +10,37 @@ import { Button } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
 import { goToSignupPage, goToFeedPage } from '../../routes'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Login } from '../../constants'
 
-export const LoginPage = () => {
+export const LoginPage = ({ setIsLoggedIn }) => {
 
   const navigate = useNavigate()
+
+  const notify = () => toast.success('Sucesso!!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    top: '1rem'
+  })
+
+  const notifyError = () => toast.error('Email não cadastrado!!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  })
 
   const [form, onChangeInputs, clearInputs] = useForm({
     email: "",
@@ -36,9 +62,13 @@ export const LoginPage = () => {
       })
       localStorage.setItem('cookenu.token', token)
       goToFeedPage(navigate)
+      setIsLoggedIn(true)
+      // alert('Sucesso')
+      notify()
 
     } catch (err) {
       console.log(err)
+      notifyError()
     }
   }
 
