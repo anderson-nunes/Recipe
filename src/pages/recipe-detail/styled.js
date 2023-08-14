@@ -11,8 +11,10 @@ export const PageContainer = styled.div`
 
   img {
     object-fit: contain;
-    width: 500px;
-    height: 450px;
+    width: 80%; /* Reduz a largura da imagem para se adaptar ao tamanho da tela */
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 1rem;
   }
 
   h1 {
@@ -21,8 +23,20 @@ export const PageContainer = styled.div`
   margin-bottom: 1.5rem;
   }
 
-  p{
-    width: 30vw;
-    font-size: 20px;
+  p {
+    font-size: 16px; /* Ajusta o tamanho da fonte para dispositivos móveis */
+    max-width: 80vw; /* Reduz a largura do parágrafo para se adaptar ao tamanho da tela */
+    text-align: center;
+  }
+
+
+@media screen and (max-width: 450px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 `
