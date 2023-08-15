@@ -4,12 +4,14 @@ import {
   CenteredPageContainer as SignupPageContainer,
   FormContainer, EmailInput, PasswordInput, NameInput
 } from '../../components'
-import { validateEmail } from '../../constants'
-import { validatePassword } from '../../constants'
-import { validateName } from '../../constants'
+import {
+  validateEmail,
+  validatePassword,
+  validateName,
+  Signup
+} from '../../services'
 import { goToFeedPage } from '../../routes'
 import { useNavigate } from 'react-router-dom'
-import { Signup } from '../../constants'
 import { Button } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
 import { toast } from 'react-toastify'

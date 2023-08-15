@@ -4,8 +4,7 @@ import {
   CenteredPageContainer as AddRecipePageContainer,
   FormContainer, DescriptionTextArea, ImageInput, TitleInput, Header
 } from '../../components'
-import { validateName } from '../../constants'
-import { AddRecipe } from '../../constants'
+import { validateName, AddRecipe } from '../../services'
 import { Button } from '@chakra-ui/react'
 import { PageTitleStyled } from './styled'
 import { useNavigate } from 'react-router-dom'

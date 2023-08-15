@@ -4,15 +4,13 @@ import {
   CenteredPageContainer as LoginPageContainer,
   FormContainer, EmailInput, PasswordInput
 } from '../../components'
-import { validateEmail } from '../../constants'
-import { validatePassword } from '../../constants'
+import { validateEmail, validatePassword, Login } from '../../services'
 import { Button } from '@chakra-ui/react'
 import logo from '../../assets/logo.png'
 import { goToSignupPage, goToFeedPage } from '../../routes'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { Login } from '../../constants'
 import { RecipeContext } from '../../hooks/useRecipeContext'
 
 export const LoginPage = () => {

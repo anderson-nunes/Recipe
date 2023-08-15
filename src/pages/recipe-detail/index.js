@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { GetRecipe } from '../../constants'
+import { GetRecipe } from '../../services'
 import { PageContainer } from './styled'
 import { useNavigate } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks'

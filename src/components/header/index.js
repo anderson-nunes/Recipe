@@ -13,6 +13,8 @@ import { RecipeContext } from '../../hooks/useRecipeContext';
 
 export const Header = ({ searchRecipe, setSearchRecipe }) => {
 
+  console.log('busca==>>', searchRecipe)
+
   const { isLoggedIn, setIsLoggedIn } = useContext(RecipeContext)
 
   const navigate = useNavigate();

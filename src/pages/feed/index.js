@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FeedContainerStyled, Button } from './styled'
-import { ListRecipes } from '../../constants'
+import { ListRecipes } from '../../services'
 import { useNavigate } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks'
 import Card from '../../components/card'
@@ -35,7 +35,7 @@ export const FeedPage = () => {
       });
   }, []);
 
-  const filteredRecipes = recipes.filter(handleNameRecipe).slice(65, 85);
+  const filteredRecipes = recipes.filter(handleNameRecipe);
 
   return (
     <>
