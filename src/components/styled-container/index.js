@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CenteredPageContainer = styled.div`
-  height: 88vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -11,8 +11,6 @@ export const CenteredPageContainer = styled.div`
 
 export const FormContainer = styled.div`
   width: 40vw;
-  /* min-width: 40vw;
-  max-width: 95vw; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

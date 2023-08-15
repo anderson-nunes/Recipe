@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useForm, useProtectedPage } from '../../hooks'
 import {
   CenteredPageContainer as AddRecipePageContainer,
-  FormContainer, DescriptionTextArea, ImageInput, TitleInput
+  FormContainer, DescriptionTextArea, ImageInput, TitleInput, Header
 } from '../../components'
 import { validateName } from '../../constants'
 import { AddRecipe } from '../../constants'
-import { Button, Textarea } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { PageTitleStyled } from './styled'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -75,6 +75,7 @@ export const AddRecipePage = () => {
 
   return (
     <AddRecipePageContainer>
+      <Header />
       <FormContainer>
         <form onSubmit={onSubmit}>
           <PageTitleStyled>Adicionar nova receita</PageTitleStyled>

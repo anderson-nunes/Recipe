@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from '../../hooks'
 import {
   CenteredPageContainer as LoginPageContainer,
@@ -12,10 +12,12 @@ import { goToSignupPage, goToFeedPage } from '../../routes'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-
 import { Login } from '../../constants'
+import { RecipeContext } from '../../hooks/useRecipeContext'
 
-export const LoginPage = ({ setIsLoggedIn }) => {
+export const LoginPage = () => {
+
+  const { setIsLoggedIn } = useContext(RecipeContext)
 
   const navigate = useNavigate()
 
@@ -63,7 +65,6 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       localStorage.setItem('cookenu.token', token)
       goToFeedPage(navigate)
       setIsLoggedIn(true)
-      // alert('Sucesso')
       notify()
 
     } catch (err) {

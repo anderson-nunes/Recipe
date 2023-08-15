@@ -19,7 +19,7 @@ export const SignupPage = () => {
 
   const navigate = useNavigate()
 
-  const [form, onChangeInputs, clearInputs] = useForm({
+  const [form, onChangeInputs] = useForm({
     email: "",
     password: "",
     name: ""

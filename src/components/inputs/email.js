@@ -5,7 +5,6 @@ import {
   FormErrorMessage
 } from '@chakra-ui/react'
 
-
 export const EmailInput = ({ isValid, value, onChange }) => {
 
   return (

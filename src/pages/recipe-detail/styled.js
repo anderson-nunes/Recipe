@@ -7,11 +7,11 @@ export const PageContainer = styled.div`
   align-items: center;
   justify-content: center;
   min-width: 50vw;
-  margin-top: 3rem;
+  margin-top: 12rem;
 
   img {
     object-fit: contain;
-    width: 80%; /* Reduz a largura da imagem para se adaptar ao tamanho da tela */
+    width: 80%; 
     max-width: 500px;
     height: auto;
     margin-bottom: 1rem;
@@ -24,8 +24,8 @@ export const PageContainer = styled.div`
   }
 
   p {
-    font-size: 16px; /* Ajusta o tamanho da fonte para dispositivos móveis */
-    max-width: 80vw; /* Reduz a largura do parágrafo para se adaptar ao tamanho da tela */
+    font-size: 16px; 
+    max-width: 50vw; 
     text-align: center;
   }
 

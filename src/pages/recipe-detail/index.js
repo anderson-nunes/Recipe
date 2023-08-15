@@ -4,6 +4,7 @@ import { GetRecipe } from '../../constants'
 import { PageContainer } from './styled'
 import { useNavigate } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks'
+import { Header } from '../../components'
 
 export const RecipeDetailPage = () => {
 
@@ -14,8 +15,6 @@ export const RecipeDetailPage = () => {
   const navigate = useNavigate()
 
   useProtectedPage(navigate)
-
-  console.log('==>>', recipe)
 
   useEffect(() => {
     GetRecipe(id)
@@ -28,11 +27,14 @@ export const RecipeDetailPage = () => {
 
   return (
     !recipe ? <h1>Não há receitas com esse id</h1> : (
-      <PageContainer>
-        <img src={recipe.imageUrl} />
-        <h1>{recipe.title}</h1>
-        <p>{recipe.description}</p>
-      </PageContainer>
+      <>
+        <Header />
+        <PageContainer>
+          <img src={recipe.imageUrl} />
+          <h1>{recipe.title}</h1>
+          <p>{recipe.description}</p>
+        </PageContainer>
+      </>
     )
   )
 }

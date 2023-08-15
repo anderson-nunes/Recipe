@@ -5,7 +5,6 @@ import {
   FormErrorMessage
 } from '@chakra-ui/react'
 
-
 export const ImageInput = ({ isValid, value, onChange }) => {
 
   return (
