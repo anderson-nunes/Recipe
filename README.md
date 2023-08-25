@@ -1,4 +1,9 @@
-# Projeto Cookenu
+<h1 align="center">Cookenu</h1>
+<div align="center">
+
+![Projeto gif](./src/assets//recipe.gif)
+
+</div>
 
 ## Processo de Desenvolvimento
 

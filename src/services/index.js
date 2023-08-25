@@ -5,7 +5,6 @@ export const BASE_URL = "https://api-cookenu.onrender.com"
 export const Login = async (body) => {
   const { data } = await axios.post(`${BASE_URL}/user/login`, body)
   return data
-
 }
 
 export const Signup = async (body) => {
